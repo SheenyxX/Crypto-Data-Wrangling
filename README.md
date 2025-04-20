@@ -6,7 +6,7 @@ import json
 import pandas as pd
 
 # Your CoinMarketCap API key
-API_KEY = '76f47bca-8f25-4131-a16e-31078d13d071'  # Replace with your actual API key
+API_KEY = ''  # Replace with your actual API key
 
 # Base URL for the CoinMarketCap API
 BASE_URL = 'https://pro-api.coinmarketcap.com/v1'
