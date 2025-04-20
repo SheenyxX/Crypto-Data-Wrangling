@@ -1,13 +1,10 @@
- Crypto-Data-Wrangling
- 
-# Python code for wrangling data from conmarket cap 
-
+```python
 import requests
 import json
 import pandas as pd
 
 # Your CoinMarketCap API key
-API_KEY = ''  # Replace with your actual API key
+API_KEY = '76f47bca-8f25-4131-a16e-31078d13d071'  # Replace with your actual API key
 
 # Base URL for the CoinMarketCap API
 BASE_URL = 'https://pro-api.coinmarketcap.com/v1'
@@ -110,3 +107,32 @@ except KeyError as e:
     print(f"Key error in JSON response: {e}")
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
+
+```
+
+This Python script fetches cryptocurrency data from the CoinMarketCap API and processes it into a clean, usable format. Here's what it does:
+
+1. **API Setup**: Configures the connection to the CoinMarketCap API using an API key, setting parameters to retrieve the top 100 cryptocurrencies with USD conversion.
+
+2. **Data Retrieval**: Makes an HTTP request to the API endpoint and retrieves the cryptocurrency data in JSON format.
+
+3. **Data Processing**:
+   - Converts the JSON response to a Pandas DataFrame
+   - Extracts and formats the USD pricing data using a custom function
+   - Handles potential errors in price formatting
+   - Extracts key metrics like price, volume, percent changes, and market cap
+
+4. **Data Transformation**:
+   - Combines the basic cryptocurrency information with the extracted USD metrics
+   - Selects only the relevant columns for the final dataset
+   - Converts timestamp data to a standardized date format
+   - Removes redundant columns
+
+5. **Output**:
+   - Displays a preview of the cleaned data
+   - Saves the processed data to a CSV file named 'cryptocurrency_data_cleaned.csv'
+
+6. **Error Handling**: Implements comprehensive error handling for API requests, JSON parsing, missing keys, and unexpected issues.
+
+This script is useful for cryptocurrency analysts, traders, or data scientists who need clean, structured cryptocurrency market data for analysis or visualization.
+
